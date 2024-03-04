@@ -214,5 +214,8 @@ function initChart() {
     //chart.title("Spending Breakdown");
     chart.data(data);
     chart.container('container');
+    chart.legend().itemsLayout("vertical");
+    chart.legend().position("right");
+    chart.legend().align("left");
     chart.draw();
 }

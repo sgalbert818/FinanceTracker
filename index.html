@@ -6,12 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task List</title>
     <link href="style.css" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-core.min.js"></script>
     <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-pie.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-bullet.min.js"></script>
 </head>
 
 <body>
@@ -27,25 +24,53 @@
             <div class="buttons">
                 <!-- Housing, Insurance, Food, Transportation, Personal, Recreation, Utilities -->
 
-                <input type="radio" id="housing" name="category" value="housing">
-                <label for="housing">HOUSING</label>
-                <input type="radio" id="insurance" name="category" value="insurance">
-                <label for="insurance">INSURANCE</label>
-                <input type="radio" id="food" name="category" value="food">
-                <label for="food">FOOD</label>
-                <input type="radio" id="transportation" name="category" value="transportation">
-                <label for="transportation">TRANSPORTATION</label>
-                <input type="radio" id="personal" name="category" value="personal">
-                <label for="personal">PERSONAL</label>
-                <input type="radio" id="recreation" name="category" value="recreation">
-                <label for="recreation">RECREATION</label>
-                <input type="radio" id="utilities" name="category" value="utilities">
-                <label for="utilities">UTILITIES</label>
+                <label for="housing" class="label">
+                    <input type="radio" id="housing" name="category" value="housing">
+                    <div class="icon-box hou">
+                        <i class="fa fa-solid fa-house"></i>
+                    </div>
+                </label>
+                <label for="insurance" class="label">
+                    <input type="radio" id="insurance" name="category" value="insurance">
+                    <div class="icon-box ins">
+                        <i class="fa fa-solid fa-car-burst"></i>
+                    </div>
+                </label>
+                <label for="food" class="label">
+                    <input type="radio" id="food" name="category" value="food">
+                    <div class="icon-box foo">
+                        <i class="fa fa-solid fa-utensils"></i>
+                    </div>
+                </label>
+                <label for="transportation" class="label">
+                    <input type="radio" id="transportation" name="category" value="transportation">
+                    <div class="icon-box tra">
+                        <i class="fa fa-solid fa-car"></i>
+                    </div>
+                </label>
+                <label for="personal" class="label">
+                    <input type="radio" id="personal" name="category" value="personal">
+                    <div class="icon-box per">
+                        <i class="fa fa-solid fa-user"></i>
+                    </div>
+                </label>
+                <label for="recreation" class="label">
+                    <input type="radio" id="recreation" name="category" value="recreation">
+                    <div class="icon-box rec">
+                        <i class="fa fa-solid fa-tree"></i>
+                    </div>
+                </label>
+                <label for="utilities" class="label">
+                    <input type="radio" id="utilities" name="category" value="utilities">
+                    <div class="icon-box uti">
+                        <i class="fa fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                </label>
             </div>
-
-            <input type="submit" id="new-expense-submit" value="Add" />
+            <div class="submit-box">
+                <input type="submit" id="new-expense-submit" value="Add Expense" />
+            </div>
         </form>
-        <div id="container"></div>
     </header>
     <main>
         <section class="expense-list">
@@ -62,8 +87,12 @@
                 </div>
             </div>
         </section>
+        <div id="outer-container">
+            <div id="container"></div>
+        </div>
     </main>
     <script src="app.js"></script>
+    <script src="https://kit.fontawesome.com/48bcbf2c30.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
