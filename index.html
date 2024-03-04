@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-pie.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-bullet.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Task List</h1>
+        <form id="new-task-form">
+            <input type="text" id="new-task-input" placeholder="Add a task!" />
+            <input type="number" id="new-amount-input" placeholder="Amount" />
+
+
+            <!-- Housing, Insurance, Food, Transportation, Personal, Recreation, Utilities -->
+
+            <input type="radio" id="housing" name="category" value="housing">
+            <label for="housing">HOUSING</label>
+            <input type="radio" id="insurance" name="category" value="insurance">
+            <label for="insurance">INSURANCE</label>
+            <input type="radio" id="food" name="category" value="food">
+            <label for="food">FOOD</label>
+            <input type="radio" id="transportation" name="category" value="transportation">
+            <label for="transportation">TRANSPORTATION</label>
+            <input type="radio" id="personal" name="category" value="personal">
+            <label for="personal">PERSONAL</label>
+            <input type="radio" id="recreation" name="category" value="recreation">
+            <label for="recreation">RECREATION</label>
+            <input type="radio" id="utilities" name="category" value="utilities">
+            <label for="utilities">UTILITIES</label>
+
+            <input type="submit" id="new-task-submit" value="Add task" />
+        </form>
+    </header>
+    <main>
+        <section class="task-list">
+            <h2>Tasks</h2>
+            <div id="tasks">
+                <!--<div class="task">
+                    <div class="content">
+                        <input type="text" class="text" value="Dummy Task" readonly />
+                        <input type="number" class="text" value="10" readonly />
+                    </div>
+                    <div class="actions">
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button>
+                    </div>
+                </div>-->
+            </div>
+        </section>
+
+        <div id="container" style="width: 500px; height: 300px"></div>
+
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

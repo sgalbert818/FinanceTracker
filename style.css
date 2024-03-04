@@ -1,0 +1,49 @@
+:root {
+    --housing: #d94040;
+    --housing-dark: #ca1c1c;
+    --insurance: #60c46a;
+    --insurance-dark: #39a244;
+    --food: #fec840;
+    --food-dark: #eeab01;
+    --transportation: #53abde;
+    --transportation-dark: #258cc8;
+    --personal: #f1ff6f;
+    --personal-dark: #d9ed22;
+    --recreation: #9b7bd7;
+    --recreation-dark: #825ec7;
+    --utilities: #68d6d1;
+    --utilities-dark: #31b9b2;
+
+}
+
+.housing {
+    border: 3px solid var(--housing);
+}
+
+.insurance {
+    border: 3px solid var(--insurance);;
+}
+
+.food {
+    border: 3px solid var(--food);
+}
+
+.transportation {
+    border: 3px solid var(--transportation);
+}
+
+.personal {
+    border: 3px solid var(--personal);
+}
+
+.recreation {
+    border: 3px solid var(--recreation);
+}
+
+.utilities {
+    border: 3px solid var(--utilities);
+}
+
+.task {
+    margin: 10px 0 0 0;
+}
