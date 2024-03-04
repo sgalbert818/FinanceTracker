@@ -60,20 +60,20 @@ var data = [
 var categoriesList = ['housing', 'insurance', 'food', 'transportation', 'recreation', 'personal', 'utilities'];
 
 window.addEventListener('load', () => {
-    const form = document.querySelector('#new-task-form');
-    const input = document.querySelector('#new-task-input');
+    const form = document.querySelector('#new-expense-form');
+    const input = document.querySelector('#new-expense-input');
     const expense = document.querySelector('#new-amount-input');
-    const taskListDiv = document.querySelector('#tasks');
+    const expenseListDiv = document.querySelector('#expenses');
     const category = document.getElementsByName('category');
 
     form.addEventListener('submit', (e) => { //e represents each instance of the action (submit button click)
         e.preventDefault(); //prevents page from refreshing on submit (default action)
 
-        const task = input.value;
+        const item = input.value;
         const amount = expense.value;
 
-        if (!task) { // if user has not typed anything into box
-            alert('Please fill out the task box');
+        if (!item) { // if user has not typed anything into box
+            alert('Please fill out the expense box');
             return;
         }
 
@@ -82,14 +82,14 @@ window.addEventListener('load', () => {
             return;
         }
 
-        const taskDiv = document.createElement("div");
-        taskDiv.classList.add("task");
+        const expenseDiv = document.createElement("div");
+        expenseDiv.classList.add("expense");
 
         let check = 0;
 
         for (i = 0; i < category.length; i++) {
             if (category[i].checked) {
-                taskDiv.classList.add(category[i].value);
+                expenseDiv.classList.add(category[i].value);
                 let objIndex = data.findIndex(
                     (temp) => temp['x'].toLowerCase() === category[i].value.toLowerCase()
                 );
@@ -107,12 +107,12 @@ window.addEventListener('load', () => {
         const contentDiv = document.createElement("div");
         contentDiv.classList.add("content");
 
-        taskDiv.appendChild(contentDiv);
+        expenseDiv.appendChild(contentDiv);
 
         const textDiv = document.createElement("input");
         textDiv.classList.add('text');
         textDiv.type = 'text'
-        textDiv.value = task;
+        textDiv.value = item;
         textDiv.setAttribute("readonly", "readonly");
 
         contentDiv.appendChild(textDiv);
@@ -138,8 +138,8 @@ window.addEventListener('load', () => {
 
         actionsDiv.appendChild(editDiv);
         actionsDiv.appendChild(deleteDiv);
-        taskDiv.appendChild(actionsDiv);
-        taskListDiv.appendChild(taskDiv);
+        expenseDiv.appendChild(actionsDiv);
+        expenseListDiv.appendChild(expenseDiv);
 
         input.value = '';
         expense.value = '';
@@ -164,7 +164,7 @@ window.addEventListener('load', () => {
                 let difference = (numberDiv.value - prevCount);
 
                 categoriesList.forEach((y) => {
-                    if (taskDiv.classList.contains(y.toLowerCase())) {
+                    if (expenseDiv.classList.contains(y.toLowerCase())) {
                         tag = y;
                     }
                 })
@@ -182,9 +182,9 @@ window.addEventListener('load', () => {
         });
 
         deleteDiv.addEventListener('click', () => {
-            taskListDiv.removeChild(taskDiv);
+            expenseListDiv.removeChild(expenseDiv);
             categoriesList.forEach((y) => {
-                if (taskDiv.classList.contains(y.toLowerCase())) {
+                if (expenseDiv.classList.contains(y.toLowerCase())) {
                     tag = y;
                 }
             })
@@ -211,7 +211,7 @@ window.addEventListener('load', () => {
 
 function initChart() {
     var chart = anychart.pie();
-    chart.title("Spending Breakdown");
+    //chart.title("Spending Breakdown");
     chart.data(data);
     chart.container('container');
     chart.draw();
