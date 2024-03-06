@@ -240,6 +240,6 @@ function initChart() {
     chart.legend().itemsLayout("vertical");
     chart.legend().position("right");
     chart.legend().align("left");
-    chart.legend().padding({top: 40, right: 3, bottom: 0, left: 0})
+    chart.legend().padding({top: 70, right: 3, bottom: 0, left: 6})
     chart.draw();
 }
