@@ -1,3 +1,5 @@
+// next steps: add filter buttons to filter expenses
+
 var data = [
     {
         x: "Housing", value: 0,
@@ -117,27 +119,46 @@ window.addEventListener('load', () => {
 
         contentDiv.appendChild(textDiv);
 
+        const dollarDiv = document.createElement("div");
+        dollarDiv.classList.add('dollar-sign');
+
+        contentDiv.appendChild(dollarDiv);
+
+        const dollarSign = document.createElement("p");
+        dollarSign.textContent = '$'
+        dollarDiv.appendChild(dollarSign);
+
         const numberDiv = document.createElement("input");
         numberDiv.classList.add('text');
+        numberDiv.classList.add('text-number');
         numberDiv.type = 'number'
         numberDiv.value = amount;
         numberDiv.setAttribute("readonly", "readonly");
         
-        contentDiv.appendChild(numberDiv);
+        dollarDiv.appendChild(numberDiv);
 
         const actionsDiv = document.createElement('div');
         actionsDiv.classList.add("actions");
 
         const editDiv = document.createElement('button');
         editDiv.classList.add('edit');
-        editDiv.innerHTML = 'Edit';
+
+        const editIcon = document.createElement('i');
+        editIcon.classList.add('fa-solid');
+        editIcon.classList.add('fa-pen-to-square');
 
         const deleteDiv = document.createElement('button');
         deleteDiv.classList.add('delete');
-        deleteDiv.innerHTML = 'Delete';
 
-        actionsDiv.appendChild(editDiv);
+        const deleteIcon = document.createElement('i');
+        deleteIcon.classList.add('fa-solid');
+        deleteIcon.classList.add('fa-xmark');
+
+        editDiv.appendChild(editIcon);
+        deleteDiv.appendChild(deleteIcon);
+
         actionsDiv.appendChild(deleteDiv);
+        actionsDiv.appendChild(editDiv);
         expenseDiv.appendChild(actionsDiv);
         expenseListDiv.appendChild(expenseDiv);
 
@@ -151,16 +172,18 @@ window.addEventListener('load', () => {
         let tag;
 
         editDiv.addEventListener('click', () => {
-            if (editDiv.innerText.toLowerCase() == 'edit') {
+            if (editIcon.classList.contains('fa-pen-to-square')) {
+                editIcon.classList.remove('fa-pen-to-square');
+                editIcon.classList.add('fa-floppy-disk')
                 textDiv.removeAttribute("readonly");
                 numberDiv.removeAttribute("readonly");
                 textDiv.focus();
-                editDiv.innerText = 'Save';
                 prevCount = numberDiv.value;
             } else {
                 numberDiv.setAttribute('readonly', 'readonly');
                 textDiv.setAttribute('readonly', 'readonly');
-                editDiv.innerText = 'Edit';
+                editIcon.classList.remove('fa-floppy-disk');
+                editIcon.classList.add('fa-pen-to-square'); 
                 let difference = (numberDiv.value - prevCount);
 
                 categoriesList.forEach((y) => {
@@ -217,5 +240,6 @@ function initChart() {
     chart.legend().itemsLayout("vertical");
     chart.legend().position("right");
     chart.legend().align("left");
+    chart.legend().padding({top: 40, right: 3, bottom: 0, left: 0})
     chart.draw();
 }
