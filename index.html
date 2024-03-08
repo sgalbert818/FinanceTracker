@@ -6,9 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
     <link href="style.css" rel="stylesheet">
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-core.min.js"></script>
     <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-pie.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-circular-gauge.min.js"></script>
+    <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css" type="text/css" rel="stylesheet">
+    <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
 </head>
 
 <body>
@@ -93,8 +99,22 @@
                 </div>-->
             </div>
         </section>
-        <div id="outer-container">
-            <div id="container"></div>
+        <div id="chart-containers">
+            <div class="outer-container">
+                <div id="container"></div>
+            </div>
+            <div class="outer-container">
+                <div id="budgets">
+                    <input type="number" class="housing budget" id="housing-budget" placeholder="Housing" />
+                    <input type="number" class="insurance budget" id="insurance-budget" placeholder="Insurance" />
+                    <input type="number" class="food budget" id="food-budget" placeholder="Food" />
+                    <input type="number" class="transportation budget" id="transportation-budget" placeholder="Transportation" />
+                    <input type="number" class="personal budget" id="personal-budget" placeholder="Personal" />
+                    <input type="number" class="recreation budget" id="recreation-budget" placeholder="Recreation" />
+                    <input type="number" class="utilities budget" id="utilities-budget" placeholder="Utilities" />
+                </div>
+                <div id="container2"></div>
+            </div>
         </div>
     </main>
     <script src="app.js"></script>

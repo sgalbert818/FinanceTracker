@@ -45,7 +45,7 @@ form {
     border-radius: 8px;
     background-color: #ffffff;
     margin: 25px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.134);
 }
 
@@ -242,11 +242,18 @@ main {
 
 .expense-list {
     width: 40%;
+    margin-bottom: 15px;
 }
 
-#outer-container {
+#chart-containers {
     width: 58%;
-    height: 400px;
+    height: 800px;
+}
+
+.outer-container {
+    width: 100%;
+    height: 380px;
+    margin-bottom: 25px;
     border-radius: 8px;
     background-color: #ffffff;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.134);
@@ -255,9 +262,40 @@ main {
     justify-content: center;
 }
 
-#container {
+#container, #container2 {
     height: 98%;
     width: 98%;
+}
+
+#container2 {
+    width: 73%;
+}
+
+#budgets {
+    width: 28%;
+    height: 92%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#budgets:hover {
+    cursor: pointer;
+}
+
+#budgets input {
+    height: 11.7%;
+    padding: 0 10px;
+    margin: 0 0 0 20px;
+    border-radius: 8px;
+    font-size: 1em;
+    color: white;
+    border: none;
+}
+
+#budgets input::placeholder {
+    color: white;
+    font-size: 0.9em;
 }
 
 .dollar-sign {
@@ -345,7 +383,7 @@ main {
 
     main {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 
     #outer-container {
@@ -355,5 +393,10 @@ main {
 
     .expense-list {
         width: 100%;
+    }
+
+    #chart-containers {
+        width: 100%;
+        height: 800px;
     }
   }
